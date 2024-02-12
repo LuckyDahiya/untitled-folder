@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I got a surprise for you</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        p {
+            font-style: italic;
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #response {
+            opacity: 0;
+            color: #333;
+            font-size: 18px;
+            margin-top: 20px;
+            font-style: italic;
+            transition: opacity 0.5s ease;
+            display: none;
+        }
+
+        #response.reveal {
+            opacity: 1;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>I got a surprise for you</h1>
+        <p>Dear Harshita,</p>
+        <p>I have a question to ask you...</p>
+        <button onclick="showResponse()">Click to reveal</button>
+        <div id="response">
+            <p>I have been thinking about you lately and I really like you. So, do you wanna be my girlfriend?
+            I know we have known each other for such a short span of time, but I would have proposed to you much earlier if I had known that you were not in a relationship with that guy. Anyway, it is what it is. I will be waiting for your answer...</p>
+        </div>
+        <div id="responseButtons" style="display: none;">
+            <button onclick="handleResponse('yes')">Yes</button>
+            <button onclick="handleResponse('no')">No</button>
+        </div>
+    </div>
+
+    <!-- Adding background music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://www.4shared.com/mp3/frdaVjIpge/angels__320_kbps___1_.html" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function showResponse() {
+            var responseButtons = document.getElementById("responseButtons");
+            responseButtons.style.display = "block";
+            var response = document.getElementById("response");
+            response.classList.add("reveal");
+        }
+
+        function handleResponse(response) {
+            var confirmationMessage = "";
+            if (response === "yes") {
+                confirmationMessage = "Congratulations! Looking forward to our journey together.";
+            } else {
+                confirmationMessage = "I understand. Thanks for your honesty. Let me ask again...";
+            }
+            alert(confirmationMessage);
+        }
+    </script>
+</body>
+
+</html>
